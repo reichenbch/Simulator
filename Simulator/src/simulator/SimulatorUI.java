@@ -58,7 +58,7 @@ public class SimulatorUI extends javax.swing.JFrame {
         HeadSim.setText("Simulator");
 
         cpuCombo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        cpuCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CPU Scheduling Algorithms", "First In First Out", "First Come First Serve", "Round Robin(Prioritized)", "Round Robin(Equal Time)", "Shortest Job First(Preemptive)", "Shortest Job First(Non-Preemptive)", "Priority Scheduler(Preemptive)", "Priority Scheduler(Non-Preemptive)", " " }));
+        cpuCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CPU Scheduling Algorithms", "First In First Out", "First Come First Serve", "Round Robin(Equal Priority)", "Round Robin(Prioritized)", "Shortest Job First(Preemptive)", "Shortest Job First(Non-Preemptive)", "Priority Scheduler(Preemptive)", "Priority Scheduler(Non-Preemptive)", " " }));
         cpuCombo.setEnabled(false);
         cpuCombo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
