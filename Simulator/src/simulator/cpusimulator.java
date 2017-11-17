@@ -5,32 +5,30 @@
  */
 package simulator;
 
+import simulator.CPUScheduler.TableData;
+
 /**
  *
  * @author RISHAV
  */
 public class cpusimulator extends javax.swing.JFrame {
 
-    cpusimulator(CPUScheduler.TableData[] dat, int n) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     /**
      * Creates new form cpusimulator
      */
-class TableData
-{
-    String pID;
-    int aT;
-    int bT;
-    int prior;
-}
 int n=0;
-TableData[] tab = new TableData[10];
+CPUScheduler.TableData[] tab = new CPUScheduler.TableData[10];
     public cpusimulator() {
         initComponents();
     }
-    public cpusimulator(TableData data[],int nData)
+
+    /**
+     *
+     * @param data
+     * @param nData
+     */
+    public cpusimulator(CPUScheduler.TableData data[], int nData)
     {
         initComponents();
         tab = data;
@@ -77,11 +75,7 @@ TableData[] tab = new TableData[10];
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        for(int i=0;i<n;i++)
-        {
-            System.out.println(tab[i]);
-            //System.out.println(tab[i].pID,tab[i].aT,tab[i].bT,tab[i].prior);
-        }
+
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -14,16 +14,16 @@ import javax.swing.table.DefaultTableModel;
 
 public class CPUScheduler extends javax.swing.JFrame {
 
-int value=0;
-int n=0;
-class TableData
+public int value=0;
+public int n=0;
+public class TableData
 {
     String pID;
     int aT;
     int bT;
     int prior;
 }
-TableData[] dat = new TableData[10];
+public TableData[] dat = new TableData[10];
     /**
      * Creates new form CPUScheduler
      */
@@ -162,7 +162,8 @@ TableData[] dat = new TableData[10];
     
    
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
-    cpusimulator cpu = new cpusimulator();
+        System.out.println(n);
+        cpusimulator cpu = new cpusimulator(dat,n);
     cpu.setVisible(true);
     setVisible(false);
     // TODO add your handling code here:
@@ -185,11 +186,14 @@ TableData[] dat = new TableData[10];
             aTime.setText("");
             bTime.setText("");
             prior.setText("");
+        
+        dat[n] =  new TableData();
         dat[n].pID = pId;
         dat[n].aT = arTime;
         dat[n].bT = buTime;
         dat[n].prior = pr;
         n++;
+
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
