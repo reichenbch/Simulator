@@ -136,8 +136,8 @@
             <StringItem index="0" value="CPU Scheduling Algorithms"/>
             <StringItem index="1" value="First In First Out"/>
             <StringItem index="2" value="First Come First Serve"/>
-            <StringItem index="3" value="Round Robin(Prioritized)"/>
-            <StringItem index="4" value="Round Robin(Equal Time)"/>
+            <StringItem index="3" value="Round Robin(Equal Priority)"/>
+            <StringItem index="4" value="Round Robin(Prioritized)"/>
             <StringItem index="5" value="Shortest Job First(Preemptive)"/>
             <StringItem index="6" value="Shortest Job First(Non-Preemptive)"/>
             <StringItem index="7" value="Priority Scheduler(Preemptive)"/>

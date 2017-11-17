@@ -36,6 +36,14 @@ TableData[] dat = new TableData[10];
         initComponents();
         value = val;
         System.out.println(value);
+        
+        prior.setEnabled(true);
+        pName.setEnabled(true);
+        aTime.setEnabled(true);
+        bTime.setEnabled(true);
+        
+        if(value <= 3)
+            prior.setEnabled(false);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -177,14 +185,16 @@ TableData[] dat = new TableData[10];
         String pId = pName.getText();
         int arTime = Integer.parseInt(aTime.getText());
         int buTime = Integer.parseInt(bTime.getText());
-        int pr = Integer.parseInt(prior.getText());
+        int pr = 0;
+        if(value > 3)
+            pr = Integer.parseInt(prior.getText());
          //try to add an event such that if the fields are empty then getText shouldn't work or something like that (NO error situation).
-            DefaultTableModel model = (DefaultTableModel)processtable.getModel();
-            model.addRow(new Object[]{pId,arTime,buTime,pr});
-            pName.setText("");
-            aTime.setText("");
-            bTime.setText("");
-            prior.setText("");
+        DefaultTableModel model = (DefaultTableModel)processtable.getModel();
+        model.addRow(new Object[]{pId,arTime,buTime,pr});
+        pName.setText("");
+        aTime.setText("");
+        bTime.setText("");
+        prior.setText("");
         dat[n].pID = pId;
         dat[n].aT = arTime;
         dat[n].bT = buTime;
