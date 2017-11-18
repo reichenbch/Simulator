@@ -19,7 +19,7 @@ public class DiskScheduler extends javax.swing.JFrame {
         initComponents();
     }
     
-     public DiskScheduler(int val) {
+    public DiskScheduler(int val) {
         initComponents();
         value = val;
     }
@@ -109,7 +109,7 @@ public class DiskScheduler extends javax.swing.JFrame {
         {
             ioN[i]=Integer.parseInt(ioA[i]);
         }
-        disksimulator ds = new disksimulator(heaP,ioN,ioA.length);
+        disksimulator ds = new disksimulator(heaP,ioN,ioA.length,value);
         ds.setVisible(true);
         setVisible(false);
         // TODO add your handling code here:

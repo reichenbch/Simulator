@@ -35,6 +35,8 @@ public class PageScheduler extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        output = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,14 +58,20 @@ public class PageScheduler extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Frame Size");
 
+        output.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        output.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                outputActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setText("Output");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(454, 454, 454)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(169, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -72,8 +80,18 @@ public class PageScheduler extends javax.swing.JFrame {
                 .addGap(227, 227, 227)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(refStr, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(refStr, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(output, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(194, 194, 194))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(454, 454, 454)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(595, 595, 595)
+                        .addComponent(jLabel3)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,7 +104,11 @@ public class PageScheduler extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(frameS, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(refStr, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(183, 183, 183)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(output, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(94, 94, 94))
         );
@@ -96,7 +118,7 @@ public class PageScheduler extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-         int framS = Integer.parseInt(frameS.getText());
+        int framS = Integer.parseInt(frameS.getText());
         String[] refS = refStr.getText().split("[ ]");
         int[] ioN = new int[refS.length];
         
@@ -104,11 +126,48 @@ public class PageScheduler extends javax.swing.JFrame {
         {
             ioN[i]=Integer.parseInt(refS[i]);
         }
-        pagesimulator ds = new pagesimulator(framS,ioN,refS.length);
-        ds.setVisible(true);
-        setVisible(false);
+        System.out.println(value);
+                        
+                switch(value){
+                    case 1:
+                        FIFO obj1 = new FIFO(framS, ioN);
+                        int r1 = obj1.method();
+                        String S1 = "";
+                        S1 = Integer.toString(r1);
+                        output.setText(S1);
+                        break;
+                    case 2:
+                        LRU obj2 = new LRU(framS, ioN);
+                        int r2 = obj2.method();
+                        String S2 = "";
+                        S2 = Integer.toString(r2);
+                        output.setText(S2);
+                        break;
+                    case 3:
+                        OPT obj3 = new OPT(framS, ioN);
+                        int r3 = obj3.method();
+                        String S3 = "";
+                        S3 = Integer.toString(r3);
+                        output.setText(S3);
+                        break;
+                    case 4:
+                        FIFO obj4 = new FIFO(framS, ioN);
+                        int r4 = obj4.method();
+                        String S4 = "";
+                        S4 = Integer.toString(r4);
+                        output.setText(S4);
+                        break;
+                }
+        
         // TODO add your handling code here:
+        
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void outputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_outputActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,6 +209,8 @@ public class PageScheduler extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField output;
     private javax.swing.JTextField refStr;
     // End of variables declaration//GEN-END:variables
 }
