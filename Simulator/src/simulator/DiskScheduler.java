@@ -100,6 +100,18 @@ public class DiskScheduler extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        int heaP = Integer.parseInt(headP.getText());
+        String[] ioA = ioArray.getText().split("[ ]");
+        int[] ioN = new int[ioA.length];
+        
+        for(int i=0;i<ioA.length;i++)
+        {
+            ioN[i]=Integer.parseInt(ioA[i]);
+        }
+        disksimulator ds = new disksimulator(heaP,ioN,ioA.length);
+        ds.setVisible(true);
+        setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
