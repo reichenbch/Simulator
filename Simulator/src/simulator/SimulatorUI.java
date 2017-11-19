@@ -5,7 +5,7 @@
  */
 package simulator;
 
-import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 /**
  *
@@ -18,6 +18,7 @@ public class SimulatorUI extends javax.swing.JFrame {
      */
     public SimulatorUI() {
         initComponents();
+        
     }
 
     /**
@@ -40,8 +41,12 @@ public class SimulatorUI extends javax.swing.JFrame {
         diskRB = new javax.swing.JRadioButton();
         exit = new javax.swing.JButton();
         clear = new javax.swing.JButton();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setBackground(java.awt.Color.black);
+        setForeground(java.awt.Color.black);
 
         testing.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         testing.setText("Run Testing");
@@ -52,13 +57,13 @@ public class SimulatorUI extends javax.swing.JFrame {
         });
 
         HeadSim.setBackground(new java.awt.Color(0, 0, 0));
-        HeadSim.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
-        HeadSim.setForeground(new java.awt.Color(51, 51, 51));
+        HeadSim.setFont(new java.awt.Font("Abyssinica SIL", 0, 60)); // NOI18N
+        HeadSim.setForeground(java.awt.Color.black);
         HeadSim.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        HeadSim.setText("Simulator");
+        HeadSim.setText("Algorithm Simulator");
 
         cpuCombo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        cpuCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CPU Scheduling Algorithms", "First In First Out", "First Come First Serve", "Round Robin(Equal Priority)", "Round Robin(Prioritized)", "Shortest Job First(Preemptive)", "Shortest Job First(Non-Preemptive)", "Priority Scheduler(Preemptive)", "Priority Scheduler(Non-Preemptive)", " " }));
+        cpuCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Option", "First In First Out", "First Come First Serve", "Round Robin(Equal Priority)", "Round Robin(Prioritized)", "Shortest Job First(Preemptive)", "Shortest Job First(Non-Preemptive)", "Priority Scheduler(Preemptive)", "Priority Scheduler(Non-Preemptive)", " " }));
         cpuCombo.setEnabled(false);
         cpuCombo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -77,7 +82,7 @@ public class SimulatorUI extends javax.swing.JFrame {
         });
 
         diskCombo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        diskCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disk Scheduling Algorithms", "Scan", "CScan", "CLook", "FCFS", "SSTF" }));
+        diskCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Option", "Scan", "CScan", "CLook", "FCFS", "SSTF" }));
         diskCombo.setEnabled(false);
         diskCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,30 +91,42 @@ public class SimulatorUI extends javax.swing.JFrame {
         });
 
         pageCombo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        pageCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Page Replacement Algorithms", "FIFO", "LRU", "OPT", "SCP" }));
+        pageCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Option", "FIFO", "LRU", "OPT", "SCP" }));
         pageCombo.setEnabled(false);
 
         buttonGroup1.add(cpuRB);
         cpuRB.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        cpuRB.setText("CPU Scheduling");
+        cpuRB.setForeground(java.awt.Color.black);
+        cpuRB.setText("<html>\n&emsp;&emsp;&nbsp;CPU <br> &nbsp;Scheduling");
         cpuRB.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cpuRBItemStateChanged(evt);
             }
         });
+        cpuRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cpuRBActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(pageRB);
         pageRB.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        pageRB.setText("Page Replacement");
+        pageRB.setForeground(java.awt.Color.black);
+        pageRB.setText("<html>\n&emsp;&emsp;Page<br> &nbsp;Replacement");
         pageRB.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 pageRBItemStateChanged(evt);
             }
         });
+        pageRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pageRBActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(diskRB);
         diskRB.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        diskRB.setText("Disk Scheduling");
+        diskRB.setText("<html>     \n &emsp;&emsp;Disk <br> &nbsp;Scheduling");
         diskRB.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 diskRBItemStateChanged(evt);
@@ -139,10 +156,10 @@ public class SimulatorUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(cpuRB)
+                    .addComponent(cpuRB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cpuCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -151,42 +168,44 @@ public class SimulatorUI extends javax.swing.JFrame {
                         .addGap(83, 83, 83)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(diskCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(68, 68, 68))
+                            .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pageRB)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(HeadSim, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(pageRB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(diskRB, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(78, 78, 78))))
+                        .addComponent(diskRB, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(75, 75, 75))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(HeadSim, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(289, 289, 289))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(HeadSim, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addComponent(diskRB))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(HeadSim, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75)
+                        .addGap(69, 69, 69)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(pageRB)
-                            .addComponent(cpuRB))))
+                            .addComponent(pageRB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cpuRB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(diskRB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(90, 90, 90)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pageCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(diskCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cpuCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(testing, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(testing, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45))
         );
 
@@ -316,6 +335,14 @@ diskRB.addActionListener(new java.awt.event.ActionListener() {
         // TODO add your handling code here:
     }//GEN-LAST:event_cpuComboFocusLost
 
+    private void pageRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pageRBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pageRBActionPerformed
+
+    private void cpuRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpuRBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpuRBActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -342,6 +369,11 @@ diskRB.addActionListener(new java.awt.event.ActionListener() {
             java.util.logging.Logger.getLogger(SimulatorUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+         try { 
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"); 
+        } catch (Exception ex) { 
+            ex.printStackTrace(); 
+        }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -360,6 +392,7 @@ diskRB.addActionListener(new java.awt.event.ActionListener() {
     private javax.swing.JComboBox<String> diskCombo;
     private javax.swing.JRadioButton diskRB;
     private javax.swing.JButton exit;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JComboBox<String> pageCombo;
     private javax.swing.JRadioButton pageRB;
     private javax.swing.JButton testing;

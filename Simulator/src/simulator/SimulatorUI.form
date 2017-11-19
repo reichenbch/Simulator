@@ -7,6 +7,13 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="alwaysOnTop" type="boolean" value="true"/>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+    </Property>
+    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -34,9 +41,9 @@
                   <Component id="cpuCombo" min="-2" pref="311" max="-2" attributes="0"/>
                   <Component id="clear" min="-2" pref="311" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="140" max="32767" attributes="0"/>
+              <EmptySpace pref="210" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="pageCombo" min="-2" pref="349" max="-2" attributes="0"/>
                           <Component id="testing" min="-2" pref="349" max="-2" attributes="0"/>
@@ -46,40 +53,41 @@
                           <Component id="diskCombo" min="-2" pref="315" max="-2" attributes="0"/>
                           <Component id="exit" min="-2" pref="315" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="pageRB" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                              <Component id="HeadSim" min="-2" pref="314" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jDesktopPane1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="pageRB" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="diskRB" min="-2" pref="315" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="HeadSim" min="-2" pref="726" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="289" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Component id="HeadSim" min="-2" pref="100" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-                      <Component id="diskRB" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="HeadSim" min="-2" pref="50" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="pageRB" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cpuRB" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="diskRB" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+                      <Component id="jDesktopPane1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
@@ -88,11 +96,11 @@
                   <Component id="diskCombo" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
                   <Component id="cpuCombo" alignment="3" min="-2" pref="91" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="110" max="32767" attributes="0"/>
+              <EmptySpace pref="46" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="testing" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                  <Component id="exit" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                  <Component id="clear" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                  <Component id="testing" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="exit" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="clear" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
           </Group>
@@ -117,13 +125,13 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="48" style="1"/>
+          <Font name="Abyssinica SIL" size="60" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="33" green="33" red="33" type="rgb"/>
+          <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Simulator"/>
+        <Property name="text" type="java.lang.String" value="Algorithm Simulator"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="cpuCombo">
@@ -133,7 +141,7 @@
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="10">
-            <StringItem index="0" value="CPU Scheduling Algorithms"/>
+            <StringItem index="0" value="Select Option"/>
             <StringItem index="1" value="First In First Out"/>
             <StringItem index="2" value="First Come First Serve"/>
             <StringItem index="3" value="Round Robin(Equal Priority)"/>
@@ -163,7 +171,7 @@
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="6">
-            <StringItem index="0" value="Disk Scheduling Algorithms"/>
+            <StringItem index="0" value="Select Option"/>
             <StringItem index="1" value="Scan"/>
             <StringItem index="2" value="CScan"/>
             <StringItem index="3" value="CLook"/>
@@ -187,7 +195,7 @@
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="5">
-            <StringItem index="0" value="Page Replacement Algorithms"/>
+            <StringItem index="0" value="Select Option"/>
             <StringItem index="1" value="FIFO"/>
             <StringItem index="2" value="LRU"/>
             <StringItem index="3" value="OPT"/>
@@ -208,10 +216,14 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="36" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="CPU Scheduling"/>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&amp;emsp;&amp;emsp;&amp;nbsp;CPU &lt;br&gt; &amp;nbsp;Scheduling"/>
       </Properties>
       <Events>
         <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cpuRBItemStateChanged"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cpuRBActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="pageRB">
@@ -222,10 +234,14 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="36" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Page Replacement"/>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&amp;emsp;&amp;emsp;Page&lt;br&gt; &amp;nbsp;Replacement"/>
       </Properties>
       <Events>
         <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="pageRBItemStateChanged"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pageRBActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="diskRB">
@@ -236,7 +252,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="36" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Disk Scheduling"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;     &#xa; &amp;emsp;&amp;emsp;Disk &lt;br&gt; &amp;nbsp;Scheduling"/>
       </Properties>
       <Events>
         <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="diskRBItemStateChanged"/>
@@ -263,6 +279,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JDesktopPane" name="jDesktopPane1">
     </Component>
   </SubComponents>
 </Form>

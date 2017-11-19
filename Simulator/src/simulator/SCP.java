@@ -13,7 +13,7 @@ package simulator;
 //import java.util.Scanner;
 
 
-public class scp {
+public class SCP {
 
 public static int full=0;
 public static int[] a;
@@ -67,7 +67,7 @@ public static  int Search(int ele)
     }
  return flag;   
 }
-public scp (int fr,int[] in)
+public SCP (int fr,int[] in)
 {
 	int n,i;
 	//int a[]=new int[100];
