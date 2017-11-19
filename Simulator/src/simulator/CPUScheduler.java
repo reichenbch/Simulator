@@ -63,6 +63,7 @@ public TableData[] dat = new TableData[10];
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         Submit.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         Submit.setText("Submit");

@@ -40,6 +40,7 @@ public class PageScheduler extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         frameS.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 

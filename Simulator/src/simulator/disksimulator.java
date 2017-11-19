@@ -51,6 +51,7 @@ public class disksimulator extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.Color.black);
         setFont(new java.awt.Font("aakar", 1, 10)); // NOI18N
+        setResizable(false);
 
         jButton1.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
         jButton1.setText("Show Graph");
