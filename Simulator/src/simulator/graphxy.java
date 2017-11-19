@@ -29,6 +29,7 @@ public class graphxy {
     static int[] ioA;
     static int iol=0;
     static String s="";
+    public static JFreeChart chart;
     public graphxy(int ioArray[],int ioLength,String str)
     {
         iol = ioLength;
@@ -50,7 +51,7 @@ public class graphxy {
         String xAxisLabel = "HEAD POINTER";
         String yAxisLabel = "HEAD POINTER DIFFERENCE";
         XYSeriesCollection dataset = new XYSeriesCollection(series);
-        JFreeChart chart = ChartFactory.createXYLineChart(chartTitle, xAxisLabel, yAxisLabel, dataset, PlotOrientation.VERTICAL, true, true, true);
+        chart = ChartFactory.createXYLineChart(chartTitle, xAxisLabel, yAxisLabel, dataset, PlotOrientation.VERTICAL, true, true, true);
         
         XYPlot plot = chart.getXYPlot();
         XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
