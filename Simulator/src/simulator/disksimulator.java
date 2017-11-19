@@ -55,6 +55,10 @@ public class disksimulator extends javax.swing.JFrame {
             }
         });
 
+        output.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+
+        head.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,8 +108,9 @@ public class disksimulator extends javax.swing.JFrame {
                         output.setText(S1);
                         S1 = Integer.toString(r12);
                         head.setText(S1);
-                        Graph G = new Graph(r1,r1.length);
-			G.test(r1,r1.length,"SCAN");
+                        //Graph G = new Graph(r1,r1.length);
+                        graphxy g = new graphxy(r1,r1.length,"SCAN");
+			//G.test(r1,r1.length,"SCAN");
                         break;
                     case 2:
                         Cscan obj2 = new Cscan(heaP, ioArray);
@@ -119,8 +124,9 @@ public class disksimulator extends javax.swing.JFrame {
                         output.setText(S2);
                         S2 = Integer.toString(r22);
                         head.setText(S2);
-                        Graph G1 = new Graph(r2,r2.length);
-			G1.test(r2,r2.length,"CSCAN");
+                        //Graph G1 = new Graph(r2,r2.length);
+                        graphxy g1 = new graphxy(r2,r2.length,"CSCAN");
+			//G1.test(r2,r2.length,"CSCAN");
                         break;
                     case 3:
                         Clook obj3 = new Clook(heaP, ioArray);
@@ -134,8 +140,9 @@ public class disksimulator extends javax.swing.JFrame {
                         output.setText(S3);
                         S3 = Integer.toString(r32);
                         head.setText(S3);
-                        Graph G2 = new Graph(r3,r3.length);
-			G2.test(r3, r3.length,"CLOOK");
+                        //Graph G2 = new Graph(r3,r3.length);
+                        graphxy g2 = new graphxy(r3,r3.length,"CSCAN");
+			//G2.test(r3, r3.length,"CLOOK");
                         break;
                     case 4:
                         FCFS obj4 = new FCFS(heaP, ioArray);
@@ -150,8 +157,9 @@ public class disksimulator extends javax.swing.JFrame {
                         output.setText(S4);
                         S4 = Integer.toString(r42);
                         head.setText(S4);
-                        Graph G3 = new Graph(r4,r4.length);
-			G3.test(r4,r4.length,"FCFS");
+                        //Graph G3 = new Graph(r4,r4.length);
+                        graphxy g3 = new graphxy(r4,r4.length,"CSCAN");
+			//G3.test(r4,r4.length,"FCFS");
                         break;
                     case 5:
                         SSTF obj5 = new SSTF(heaP, ioArray);
@@ -166,8 +174,9 @@ public class disksimulator extends javax.swing.JFrame {
                         output.setText(S5);
                         S5 = Integer.toString(r52);
                         head.setText(S5);
-                        Graph G4 = new Graph(r5,r5.length);
-			G4.test(r5,r5.length,"SSTF");
+                        //Graph G4 = new Graph(r5,r5.length);
+                        graphxy g4 = new graphxy(r5,r5.length,"SSTF");
+			//G4.test(r5,r5.length,"SSTF");
                         break;
                         
                 }

@@ -75,7 +75,7 @@ public class Graph extends JPanel
     }
     public static void test(int[] input,int x,String S) {
         JFrame f = new JFrame(S);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setDefaultCloseOperation(javax.swing.JFrame.HIDE_ON_CLOSE);
         f.add(new Graph(input,x));
         f.setSize(400,400);
         f.setLocation(200,200);
