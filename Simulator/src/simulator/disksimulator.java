@@ -12,7 +12,7 @@ import java.util.Arrays;
  */
 public class disksimulator extends javax.swing.JFrame {
 
-   
+   public graphxy g;
     public disksimulator() {
         initComponents();
     }
@@ -109,7 +109,7 @@ public class disksimulator extends javax.swing.JFrame {
                         S1 = Integer.toString(r12);
                         head.setText(S1);
                         //Graph G = new Graph(r1,r1.length);
-                        graphxy g = new graphxy(r1,r1.length,"SCAN");
+                        g = new graphxy(r1,r1.length,"SCAN");
 			//G.test(r1,r1.length,"SCAN");
                         break;
                     case 2:
@@ -125,7 +125,7 @@ public class disksimulator extends javax.swing.JFrame {
                         S2 = Integer.toString(r22);
                         head.setText(S2);
                         //Graph G1 = new Graph(r2,r2.length);
-                        graphxy g1 = new graphxy(r2,r2.length,"CSCAN");
+                        g = new graphxy(r2,r2.length,"CSCAN");
 			//G1.test(r2,r2.length,"CSCAN");
                         break;
                     case 3:
@@ -141,7 +141,7 @@ public class disksimulator extends javax.swing.JFrame {
                         S3 = Integer.toString(r32);
                         head.setText(S3);
                         //Graph G2 = new Graph(r3,r3.length);
-                        graphxy g2 = new graphxy(r3,r3.length,"CSCAN");
+                        g = new graphxy(r3,r3.length,"CSCAN");
 			//G2.test(r3, r3.length,"CLOOK");
                         break;
                     case 4:
@@ -158,7 +158,7 @@ public class disksimulator extends javax.swing.JFrame {
                         S4 = Integer.toString(r42);
                         head.setText(S4);
                         //Graph G3 = new Graph(r4,r4.length);
-                        graphxy g3 = new graphxy(r4,r4.length,"CSCAN");
+                        g = new graphxy(r4,r4.length,"CSCAN");
 			//G3.test(r4,r4.length,"FCFS");
                         break;
                     case 5:
@@ -175,7 +175,7 @@ public class disksimulator extends javax.swing.JFrame {
                         S5 = Integer.toString(r52);
                         head.setText(S5);
                         //Graph G4 = new Graph(r5,r5.length);
-                        graphxy g4 = new graphxy(r5,r5.length,"SSTF");
+                        g = new graphxy(r5,r5.length,"SSTF");
 			//G4.test(r5,r5.length,"SSTF");
                         break;
                         
