@@ -6,6 +6,7 @@
 package simulator;
 
 import simulator.CPUScheduler.TableData;
+import cpu.Simulation;
 
 /**
  *
@@ -33,6 +34,7 @@ CPUScheduler.TableData[] tab = new CPUScheduler.TableData[10];
         initComponents();
         tab = data;
         n = nData;
+        setLocationRelativeTo(null);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,7 +47,11 @@ CPUScheduler.TableData[] tab = new CPUScheduler.TableData[10];
 
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Instructions");
+        setAlwaysOnTop(true);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setResizable(false);
 
         jButton1.setText("I am Batman");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -58,17 +64,17 @@ CPUScheduler.TableData[] tab = new CPUScheduler.TableData[10];
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(616, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(620, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(600, 600, 600))
+                .addGap(596, 596, 596))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(508, Short.MAX_VALUE)
+                .addContainerGap(541, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(46, 46, 46))
+                .addContainerGap())
         );
 
         pack();

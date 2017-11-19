@@ -6,6 +6,9 @@
 package simulator;
 
 import javax.swing.UIManager;
+import cpu.Simulation;
+import cpu.Face;
+import cpu.CPU;
 
 /**
  *
@@ -45,11 +48,12 @@ public class SimulatorUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
-        setBackground(java.awt.Color.black);
-        setForeground(java.awt.Color.black);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setForeground(new java.awt.Color(0, 0, 0));
         setResizable(false);
 
         testing.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        testing.setForeground(new java.awt.Color(51, 51, 255));
         testing.setText("Run Testing");
         testing.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,6 +63,7 @@ public class SimulatorUI extends javax.swing.JFrame {
 
         HeadSim.setBackground(new java.awt.Color(0, 0, 0));
         HeadSim.setFont(new java.awt.Font("Abyssinica SIL", 0, 60)); // NOI18N
+        HeadSim.setForeground(new java.awt.Color(0, 0, 255));
         HeadSim.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HeadSim.setText("Algorithm Simulator");
 
@@ -132,6 +137,7 @@ public class SimulatorUI extends javax.swing.JFrame {
         });
 
         exit.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        exit.setForeground(new java.awt.Color(255, 51, 51));
         exit.setText("EXIT");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,6 +146,7 @@ public class SimulatorUI extends javax.swing.JFrame {
         });
 
         clear.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        clear.setForeground(new java.awt.Color(0, 102, 153));
         clear.setText("CLEAR");
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,8 +220,12 @@ public class SimulatorUI extends javax.swing.JFrame {
         if(cpuRB.isSelected()==true)
         {
             int ind = cpuCombo.getSelectedIndex();
-            CPUScheduler spr = new CPUScheduler(ind);
-            spr.setVisible(true);
+            //CPUScheduler spr = new CPUScheduler(ind);
+            //spr.setVisible(true);
+            String[] args={Integer.toString(ind)};
+            CPU.main(args);
+            //Face sre = new Face();
+            //sre.setVisible(true);
             setVisible(false);
         }
         else if(pageRB.isSelected()==true)
