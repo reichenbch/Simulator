@@ -3,7 +3,7 @@ package Items;
 import java.util.ArrayList;
 
 /**
- * @author Ahmed Elmowafy
+ * @author Rishav
  * Queue is an array list of jobs, used to provide some helpful methods
  * to make using list of jobs much easier.
  */

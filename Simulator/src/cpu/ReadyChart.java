@@ -6,7 +6,7 @@ import Items.Queue;
 import java.util.ArrayList;
 
 /**
- * @author Ahmed Elmowafy
+ * @author Rishav
  * Responsible for viewing the ready queue in the GUI frame by setting
  * the place and the color of every job representation
  */

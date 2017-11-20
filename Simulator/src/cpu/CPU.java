@@ -1,7 +1,7 @@
 package cpu;
 
 /**
- * @author Ahmed Elmowafy
+ * @author Rishav
  * Main class of the application that initializes Face Frame.
  */
 public class CPU {

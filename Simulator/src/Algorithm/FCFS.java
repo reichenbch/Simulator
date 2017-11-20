@@ -4,7 +4,7 @@ import Items.Job;
 import Items.Queue;
 
 /**
- * @author Ahmed Elmowafy
+ * @author Rishav
  * "First Come First served" CPU scheduling algorithm works like its name
  * the first the job arrive to the ready queue the first it will be processed 
  * by the CPU.

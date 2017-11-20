@@ -3,7 +3,7 @@ package cpu;
 import Items.Queue;
 
 /**
- * @author Ahmed Elmowafy
+ * @author Rishav
  * Main queue is the main list of jobs in the simulation, this class is used 
  * to keep the main queue and a temp queue which is used to keep a copy of the
  * main queue to be used when the user wants to restart the same simulation with

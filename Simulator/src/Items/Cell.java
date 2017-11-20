@@ -4,7 +4,7 @@ import java.awt.Color;
 import javax.swing.JLabel;
 
 /**
- * @author Ahmed Elmowafy
+ * @author Rishav
  * " Cell " is a class to represent CPU job graphically on the screen
  *  and some markers (black mark represented every 10 jobs).
  */

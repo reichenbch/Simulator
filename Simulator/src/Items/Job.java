@@ -4,7 +4,7 @@ import java.util.Random;
 
 /**
  *
- * @author Ahmed Elmowafy
+ * @author Rishav
  * " Job " is a class to represent CPU job and its variables 
  * and some useful methods for making, comparing and coping CPU jobs.
  * and some setters and getters.

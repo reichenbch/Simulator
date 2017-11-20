@@ -4,7 +4,7 @@ import Items.Job;
 import Items.Queue;
 
 /**
- * @author Ahmed Elmowafy
+ * @author Rishav
  * "Shortest job first" algorithm is the same as "First come first served"
  * except that the ready queue is reordered by shortest burst time job
  * every time a new job arrives.

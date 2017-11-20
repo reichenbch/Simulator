@@ -4,13 +4,9 @@
  * and open the template in the editor.
  */
 package simulator;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import org.jfree.chart.ChartUtilities;
+import java.io.*;
 
 /**
  *
@@ -37,7 +33,62 @@ public class disksimulator extends javax.swing.JFrame {
         n = num;
         v = value;
     }
+    public static String readFiler() {
+        String fileName = "temp.txt";
+        String line = null;
+        String val = null;
 
+        try {
+            FileReader fileReader = 
+                new FileReader(fileName);
+
+            BufferedReader bufferedReader = 
+                new BufferedReader(fileReader);
+
+            while((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+                val = line;
+            }   
+            bufferedReader.close();         
+        }
+        catch(FileNotFoundException ex) {
+            System.out.println(
+                "Unable to open file '" + 
+                fileName + "'");                
+        }
+        catch(IOException ex) {
+            System.out.println(
+                "Error reading file '" 
+                + fileName + "'");                  
+        }
+        return val;
+        
+    }
+    public static void writeFiler(int ct) {
+        String fileName = "temp.txt";
+
+        try {
+            // Assume default encoding.
+            FileWriter fileWriter =
+                new FileWriter(fileName);
+
+       
+            BufferedWriter bufferedWriter =
+                new BufferedWriter(fileWriter);
+
+
+            bufferedWriter.write(Integer.toString(ct));
+            bufferedWriter.newLine();
+            bufferedWriter.close();
+        }
+        catch(IOException ex) {
+            System.out.println(
+                "Error writing to file '"
+                + fileName + "'");
+            // Or we could just do this:
+            // ex.printStackTrace();
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -297,14 +348,20 @@ public class disksimulator extends javax.swing.JFrame {
         int width = 640;
         int height = 480;
 
-        ct+=1;
+        //ct+=1;
+        String ctr=readFiler();
+        System.out.println("adbhub"+ctr+"sdf");
+        ct=Integer.parseInt(ctr);
         
         File imageFile = new File("Chart"+Integer.toString(ct)+".png");
         try {
             ChartUtilities.saveChartAsPNG(imageFile, g.chart, width, height);
         } catch (IOException ex) {
             System.err.println(ex);
-        }        // TODO add your handling code here:
+        }
+        ct+=1;
+        writeFiler(ct);
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
     
     /**

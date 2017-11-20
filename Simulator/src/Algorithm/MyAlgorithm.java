@@ -4,7 +4,7 @@ import Items.Job;
 import Items.Queue;
 
 /**
- * @author Ahmed Elmowafy
+ * @author Rishav
  * "MyAlgorithm" is class used to be inherited by all scheduling algorithms classes 
  * for the sake of polymorphism. it also holds mutual variables and methods between
  * all algorithm classes.

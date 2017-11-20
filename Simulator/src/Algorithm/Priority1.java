@@ -4,7 +4,7 @@ import Items.Job;
 import Items.Queue;
 
 /**
- * @author Ahmed Elmowafy
+ * @author Rishav
  * "non-preemptive priority" works just like "first come first served algorithm"
  * except that the jobs in the ready queue are ordered by priority.
  */

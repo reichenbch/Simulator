@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
- * @author Ahmed Elmowafy
+ * @author Rishav
  * used to add the jobs data manually
  */
 public class AddData extends javax.swing.JFrame {
