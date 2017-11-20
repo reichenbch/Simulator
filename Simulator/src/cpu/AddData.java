@@ -70,13 +70,18 @@ public class AddData extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        jTextField1.setEditable(false);
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("0");
         jTextField1.setMaximumSize(new java.awt.Dimension(40, 20));
         jTextField1.setMinimumSize(new java.awt.Dimension(40, 20));
         jTextField1.setPreferredSize(new java.awt.Dimension(40, 20));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField2.setText("0");
@@ -500,6 +505,10 @@ public class AddData extends javax.swing.JFrame {
         jTextField23.setText("8");
         jTextField24.setText("16");   
     }//GEN-LAST:event_DefaultBttnActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
      
     private ArrayList<Job> list = new ArrayList<Job>(); // list of jobs entered by the user
     private int [] userData = new int [24];  // data entered by the user
