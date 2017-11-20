@@ -196,7 +196,7 @@ public class PageScheduler extends javax.swing.JFrame {
                         output.setText(S3);
                         break;
                     case 4:
-                        FIFO obj4 = new FIFO(framS, ioN);
+                        SCP obj4 = new SCP(framS, ioN);
                         int r4 = obj4.method();
                         String S4 = "";
                         S4 = Integer.toString(r4);

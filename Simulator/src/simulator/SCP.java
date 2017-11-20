@@ -1,102 +1,56 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package simulator;
-
-/**
- *
- * @author udyar
- */
-//package page;
-//import java.util.Scanner;
-
-
-public class SCP {
-
-public static int full=0;
-public static int[] a;
-public static int ref[]=new int[3];
-public static int frame[]=new int[3];
-public static int repptr=0;
-public static int count=0;
-public static void display()
-{		int i;
-		System.out.println("\nThe elements in the frame are\n");
-		for(i=0;i<full;i++)
-			System.out.println(frame[i]);
- }
-public static int Pagerep(int ele)
+import java.util.Vector;
+public class SCP
 {
- int temp;
- while(ref[repptr]!=0)
-{ 
-	 ref[repptr++]=0;
-	 if(repptr==3)
-     repptr=0;
-}                     
- temp=frame[repptr];
- frame[repptr]=ele;
- ref[repptr]=1;
- return temp;   
-}
-public static void Pagefault(int ele)
-{
-	if(full!=3)
-{
-		ref[full]=1;
-       frame[full++]=ele;
-}
-//else
-//System.out.println(Pagerep(ele));
-}
-public static  int Search(int ele)
-{     
-	int i,flag;
-    flag=0;
-    if(full!=0)
-    {
-    for(i=0;i<full;i++)
-    if(ele==frame[i])
-    {  
-    	flag=1;
-        ref[i]=1;
-        break;
-     }
-    }
- return flag;   
-}
-public SCP (int fr,int[] in)
-{
-	int n,i;
-	//int a[]=new int[100];
-   
-	//Scanner in=new Scanner(System.in);
-	System.out.println("Enter no .of pages");
-	//n=in.nextInt();
-	System.out.println("Enter page nos");
-	a=new int[in.length];
-    for(i=0;i<in.length;i++)
-    	{
-    	a[i]=in[i];
-    	System.out.println(a[i]);
-    	
-    	}
-    for(i=0;i<a.length;i++)
-    {
-                    if(Search(a[i])!=1)
+    static int pagefault = 0;
+    public SCP(int framesize, int[] seq){
+        int frame[] = new int[100];
+        int frequency[] = new int[200]; 
+        int n = seq.length;
+        for(int i=0; i<n; i++)
+            frequency[seq[i]] = -1;
+        
+        Vector oldidx = new Vector(0);
+        for(int i=0; i<framesize; i++){
+            oldidx.addElement(i);
+            frame[i] = -1;
+        }
+        
+        for(int i=0; i<n; i++)
+        {
+            if(frequency[seq[i]] >= 0){
+                frequency[seq[i]]++;
+            }
+            else
+            {
+                pagefault++;
+                while(frequency[seq[i]] == -1) {
+
+                    int oldestidx;
+                    for(int j=0; j<framesize; j++)
                     {
-                    	Pagefault(a[i]);
-                        //display();
-                        count++;
+                        oldestidx = (Integer)oldidx.get(j);
+                        if(frame[oldestidx] != -1 && frequency[frame[oldestidx]] > 0)
+                        {
+                            frequency[frame[oldestidx]]--;
+                        }
+                        else
+                        {        
+                            if(frame[oldestidx] != -1)
+                                frequency[frame[oldestidx]] = -1;                       
+                            frame[oldestidx] = seq[i];                      
+                            frequency[seq[i]] = 0;                        
+                            oldidx.removeElementAt(j);                      
+                            oldidx.addElement(oldestidx);                       
+                            break;
+                        }
                     }
+                }
+            } 
+        }    
     }
-                   System.out.print(count);
-}
-public int method(){
-	return count;
-}
-}
-
+    public int method(){
+        return pagefault;
+    }
+}  
 
