@@ -192,6 +192,11 @@ public class Face extends javax.swing.JFrame {
                 nextStepBttnActionPerformed(null);  // press next step button
              //delay();  // delay time after every step
             }
+            else if(Simulation.Finished && Simulation.Stoped)
+            {
+                nextStepBttnActionPerformed(null);
+                break;
+            }
             try 
             {
                 Thread.sleep(1000);//Time to wait for next routine
@@ -207,7 +212,7 @@ public class Face extends javax.swing.JFrame {
      * responsible for the delay time between every step in the
      * simulation.
      */
-    public void delay ()
+   /* public void delay ()
     {
         int num = Integer.parseInt(simSpeed.getSelectedItem()+"");  // get the delay factor from GUI
         try {
@@ -216,7 +221,7 @@ public class Face extends javax.swing.JFrame {
         catch (InterruptedException ex) {  
             Logger.getLogger(Face.class.getName()).log(Level.SEVERE, null, ex);
         }  
-    }
+    }*/
     // </editor-fold>
         
     /**
@@ -783,6 +788,11 @@ public class Face extends javax.swing.JFrame {
             AlgorithmsMenu.setEnabled(false);
             Job job = Simulation.workStep();
             //System.out.println("Bruce Wayne");
+            viewVisuals(job, Simulation.getReadyQueue());
+        }
+        else
+        {
+            Job job = Simulation.workStep();
             viewVisuals(job, Simulation.getReadyQueue());
         }
         if(Simulation.Finished){finishBttnActionPerformed(null);}
