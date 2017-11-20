@@ -177,7 +177,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="37" max="32767" attributes="0"/>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -278,8 +278,8 @@
                 <StringItem index="1" value="SJF"/>
                 <StringItem index="2" value="SRTF"/>
                 <StringItem index="3" value="RR"/>
-                <StringItem index="4" value="Priority1"/>
-                <StringItem index="5" value="Priority2"/>
+                <StringItem index="4" value="Priority(NP)"/>
+                <StringItem index="5" value="Priority(PR)"/>
               </StringArray>
             </Property>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">

@@ -61,9 +61,9 @@ public class Simulation {
     {
         if(AlgorithmType.equals("FCFS")) {myAlgorithm = new FCFS(MainQueue.get());}  // first come first served
         else if(AlgorithmType.equals("SJF")) {myAlgorithm = new SJF(MainQueue.get());} // shortest job first
-        else if(AlgorithmType.equals("Priority1")) {myAlgorithm = new Priority1(MainQueue.get());} // priority non-preemptive
+        else if(AlgorithmType.equals("Priority(NP)")) {myAlgorithm = new Priority1(MainQueue.get());} // priority non-preemptive
         else if(AlgorithmType.equals("STRF")) {myAlgorithm = new SRTF(MainQueue.get());} // shortest time remaining first
-        else if(AlgorithmType.equals("Priority2")) {myAlgorithm = new Priority2(MainQueue.get());} // priority preemptive
+        else if(AlgorithmType.equals("Priority(PR)")) {myAlgorithm = new Priority2(MainQueue.get());} // priority preemptive
         else if(AlgorithmType.equals("RR")) {myAlgorithm = new RR(MainQueue.get() , Quantum);}  // Round Robin
     }
 }

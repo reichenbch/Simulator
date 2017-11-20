@@ -415,7 +415,7 @@ public class AddData extends javax.swing.JFrame {
 
         jLabel9.setText("Add the jobs data");
 
-        jLabel10.setText(" 0 <= arrive < 30     &    0 < burst < 100  &   0 =< priority  < 127");
+        jLabel10.setText(" 0 <= arrive < 30    &    0 < burst < 100  &   0  =<  priority  < 127");
 
         jLabel11.setText("if arrive and burst and priority equal zero means null job");
 
@@ -517,7 +517,7 @@ public class AddData extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(39, 39, 39)))))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(

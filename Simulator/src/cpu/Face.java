@@ -168,9 +168,9 @@ public class Face extends javax.swing.JFrame {
      * remove list of cell elements from the GUI
      * @param list list of elements to be removed from the GUI 
      */
-    private void removeFromGUI ( ArrayList<Cell> list)
+    private void removeFromGUI (ArrayList<Cell> list)
     {
-        for(int i =0 ; i< list.size() ; i++)
+        for(int i =0;i< list.size();i++)
         {
            remove(list.get(i)); 
         } 
@@ -310,7 +310,7 @@ public class Face extends javax.swing.JFrame {
         jLabel2.setText("Algorithm");
 
         AlgorithmsMenu.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        AlgorithmsMenu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "FCFS", "SJF", "SRTF", "RR", "Priority1", "Priority2" }));
+        AlgorithmsMenu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "FCFS", "SJF", "SRTF", "RR", "Priority(NP)", "Priority(PR)" }));
         AlgorithmsMenu.setMaximumSize(new java.awt.Dimension(65, 20));
         AlgorithmsMenu.setMinimumSize(new java.awt.Dimension(65, 20));
         AlgorithmsMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -442,7 +442,7 @@ public class Face extends javax.swing.JFrame {
                                     .addComponent(restartBttn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(quantum, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -790,11 +790,11 @@ public class Face extends javax.swing.JFrame {
             //System.out.println("Bruce Wayne");
             viewVisuals(job, Simulation.getReadyQueue());
         }
-        else
+        /*else
         {
             Job job = Simulation.workStep();
             viewVisuals(job, Simulation.getReadyQueue());
-        }
+        }*/
         if(Simulation.Finished){finishBttnActionPerformed(null);}
         String t1 = myTable.getAverageWaiting() + "";
         String t2 = myTable.getAverageTurn() + "";
@@ -814,6 +814,7 @@ public class Face extends javax.swing.JFrame {
     private void stopBttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopBttnActionPerformed
         // TODO add your handling code here:
         Simulation.Stoped = true; // stop the simulation
+        clearReadyQueue();
         stopBttn.setEnabled(false);
         nextStepBttn.setEnabled(true);
         simulateBttn.setEnabled(true);
@@ -889,6 +890,7 @@ public class Face extends javax.swing.JFrame {
             nextStepBttnActionPerformed(null);  // press next step button till the simluation is finished
         }
         // modify the buttons view
+        clearReadyQueue();
         stopBttnActionPerformed(null);
         stopBttn.setEnabled(false);
         finishBttn.setEnabled(false);
