@@ -305,7 +305,7 @@ public class Face extends javax.swing.JFrame {
         jLabel2.setText("Algorithm");
 
         AlgorithmsMenu.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        AlgorithmsMenu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "FCFS", "SJF", "STRF", "RR", "Priority1", "Priority2" }));
+        AlgorithmsMenu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "FCFS", "SJF", "SRTF", "RR", "Priority1", "Priority2" }));
         AlgorithmsMenu.setMaximumSize(new java.awt.Dimension(65, 20));
         AlgorithmsMenu.setMinimumSize(new java.awt.Dimension(65, 20));
         AlgorithmsMenu.addActionListener(new java.awt.event.ActionListener() {
